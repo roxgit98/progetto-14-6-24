@@ -39,12 +39,20 @@ const loadProducts = () => {
           h5.classList.add("card-title");
           h5.textContent = prodotto.name;
 
+          const brand = document.createElement("h6");
+          brand.classList.add("card-text");
+          brand.textContent = prodotto.brand;
+
+          const description = document.createElement("p");
+          description.classList.add("card-text");
+          description.textContent = prodotto.description;
+
           const p = document.createElement("p");
           p.classList.add("card-text");
-          p.textContent = prodotto.price;
+          p.textContent = prodotto.price + "€";
 
           const a = document.createElement("a");
-          a.href = "#";
+          a.href = "indexBackOffice.html";
           a.classList.add("btn");
           a.classList.add("btn-secondary");
           a.textContent = "modifica";
@@ -54,6 +62,8 @@ const loadProducts = () => {
           card.appendChild(img);
           card.appendChild(cardBody);
           cardBody.appendChild(h5);
+          cardBody.appendChild(brand);
+          cardBody.appendChild(description);
           cardBody.appendChild(p);
           cardBody.appendChild(a);
         });
